@@ -222,9 +222,7 @@ class LLMRequestHandler:
                         },
                     }
                 else:
-                    request_params["response_format"] = {
-                        'type': 'json_object'
-                    }
+                    request_params["response_format"] = {"type": "json_object"}
 
                 response = await acompletion(**request_params)
                 content: str = response.choices[0].message.content or ""
